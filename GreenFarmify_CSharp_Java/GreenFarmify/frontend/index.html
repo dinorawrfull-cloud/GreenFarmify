@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#351710">
+  <title>GreenFarmify Inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">🌱</div>
+        <div><strong>GreenFarmify</strong><span>INTELIGENTE</span></div>
+      </div>
+      <div class="workspace-label">PLATAFORMA AGRÍCOLA</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="inicio"><span>⌂</span> Inicio <small>01</small></button>
+        <button class="nav-item" data-view="calendario"><span>▦</span> Calendario agroclimático <small>02</small></button>
+        <button class="nav-item" data-view="cultivos"><span>♧</span> Recomendaciones de cultivos <small>03</small></button>
+        <button class="nav-item" data-view="sostenible"><span>♻</span> Agricultura sostenible <small>04</small></button>
+        <button class="nav-item" data-view="general"><span>▤</span> Panel general <small>05</small></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-card"><span class="pulse"></span><div><b>Modo demostración</b><small>Datos de prueba activos</small></div></div>
+        <div class="user-mini"><div class="avatar">GF</div><div><b>Productor agrícola</b><small>Yucatán, México</small></div><span>⌄</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">☰</button>
+        <div class="breadcrumb">GreenFarmify <span>/</span> <b id="crumb">Inicio</b></div>
+        <div class="top-actions"><span class="live-dot"></span><span class="top-status">Sistema operativo</span><button class="icon-btn" title="Notificaciones">♧</button><div class="top-avatar">GF</div></div>
+      </header>
+
+      <section class="view active" id="view-inicio">
+        <div class="page-heading">
+          <div><div class="eyebrow">DOMINGO, 15 DE NOVIEMBRE DE 2026 · YUCATÁN, MÉXICO</div><h1>El campo, <em>en tus manos.</em></h1><p>Monitorea tus parcelas y toma decisiones informadas para una agricultura más sostenible.</p></div>
+          <div class="heading-actions"><span class="demo-tag">● DATOS DE PRUEBA</span><button class="primary-btn" id="refreshBtn">↻ Actualizar datos</button></div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Municipios monitoreados</span><span class="stat-icon moss">⌖</span></div><strong id="statMunicipios">06</strong><small><i>+2</i> zonas de seguimiento</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Sensores instalados</span><span class="stat-icon salmon">⌁</span></div><strong id="statSensores">18</strong><small>Red de monitoreo demostrativa</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Temperatura promedio</span><span class="stat-icon citron">☼</span></div><strong id="statTemp">29.4°<small>C</small></strong><small>Ambiente · valor simulado</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Humedad del suelo</span><span class="stat-icon moss">◌</span></div><strong id="statHumedad">64<small>%</small></strong><small>Promedio de zonas monitoreadas</small></article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel map-panel">
+            <div class="panel-header"><div><div class="eyebrow">MONITOREO TERRITORIAL</div><h2>Mapa agrícola de Yucatán</h2><p>Selecciona una zona para consultar sus condiciones.</p></div><button class="subtle-btn">⌖ Ver mapa</button></div>
+            <div class="map-legend"><span><i class="legend-dot active-dot"></i> Sensor activo</span><span><i class="legend-dot zone-dot"></i> Zona agrícola</span><span><i class="legend-dot no-dot"></i> Sin sensor</span></div>
+            <div class="map-stage">
+              <div class="map-watermark">YUCATÁN</div>
+              <svg class="yucatan-map" viewBox="0 0 620 440" role="img" aria-label="Mapa esquemático demostrativo de municipios de Yucatán">
+                <defs><pattern id="grain" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="1" fill="#75804a" opacity=".18"/></pattern></defs>
+                <path class="land" d="M72 72 L160 49 233 58 290 37 362 53 412 30 473 56 510 99 553 119 541 166 568 207 544 250 558 300 520 328 497 380 441 390 399 365 344 382 304 357 252 373 205 345 160 350 125 313 89 289 78 242 48 205 62 154 40 119Z"/>
+                <path class="land-texture" d="M72 72 L160 49 233 58 290 37 362 53 412 30 473 56 510 99 553 119 541 166 568 207 544 250 558 300 520 328 497 380 441 390 399 365 344 382 304 357 252 373 205 345 160 350 125 313 89 289 78 242 48 205 62 154 40 119Z"/>
+                <g class="municipal-lines">
+                  <path d="M160 49L160 350 M233 58L205 345 M290 37L304 357 M362 53L344 382 M412 30L399 365 M473 56L441 390 M40 119L553 119 M48 205L568 207 M78 242L558 300 M125 313L520 328"/>
+                  <path d="M72 72L233 58L290 37 M160 49L205 345 M233 58L304 357 M362 53L399 365"/>
+                </g>
+                <g class="map-labels"><text x="102" y="151">Celestún</text><text x="218" y="115">Mérida</text><text x="305" y="95">Motul</text><text x="421" y="145">Tizimín</text><text x="340" y="245">Valladolid</text><text x="197" y="275">Muna</text><text x="445" y="315">Peto</text><text x="92" y="250">Hunucmá</text><text x="265" y="335">Tekax</text></g>
+                <g class="sensor-pins">
+                  <g class="map-pin selected" data-municipio="merida" transform="translate(237 142)"><circle r="17"/><text y="5">⌁</text><title>Mérida</title></g>
+                  <g class="map-pin" data-municipio="tizimin" transform="translate(440 172)"><circle r="17"/><text y="5">⌁</text><title>Tizimín</title></g>
+                  <g class="map-pin" data-municipio="valladolid" transform="translate(354 268)"><circle r="17"/><text y="5">⌁</text><title>Valladolid</title></g>
+                  <g class="map-pin" data-municipio="tekax" transform="translate(277 333)"><circle r="17"/><text y="5">⌁</text><title>Tekax</title></g>
+                  <g class="map-pin" data-municipio="muna" transform="translate(192 286)"><circle r="17"/><text y="5">⌁</text><title>Muna</title></g>
+                  <g class="map-pin" data-municipio="motul" transform="translate(323 117)"><circle r="17"/><text y="5">⌁</text><title>Motul</title></g>
+                </g>
+              </svg>
+              <div class="map-note">Vista esquemática · no representa límites oficiales</div>
+              <div class="map-controls"><button aria-label="Acercar">＋</button><button aria-label="Alejar">－</button><button aria-label="Centrar">⌖</button></div>
+            </div>
+            <div class="map-footer"><span><b>6</b> municipios con datos demostrativos</span><span>Última actualización: hace unos momentos</span></div>
+          </section>
+
+          <aside class="panel zone-panel">
+            <div class="panel-header"><div><div class="eyebrow">FICHA DE MONITOREO</div><h2 id="zoneName">Mérida</h2><p id="zoneLocation">20.9674° N · 89.5926° O</p></div><span class="signal">● ACTIVO</span></div>
+            <div class="zone-weather"><div><span>Temperatura ambiente</span><strong id="zoneTemp">30.2°</strong><small>°C · demostrativo</small></div><div class="weather-symbol">☀</div></div>
+            <div class="sensor-grid">
+              <div class="sensor"><span>Humedad suelo</span><b id="zoneSoil">67%</b><div class="meter"><i style="width:67%"></i></div></div>
+              <div class="sensor"><span>Humedad ambiente</span><b id="zoneAir">72%</b><div class="meter"><i style="width:72%"></i></div></div>
+              <div class="sensor"><span>pH del suelo</span><b id="zonePh">6.8</b><small>Escala 0–14</small></div>
+              <div class="sensor"><span>Precipitación</span><b id="zoneRain">12 mm</b><small>Acumulado simulado</small></div>
+            </div>
+            <div class="nutrients"><div class="nutrient-title">Nutrientes del suelo <span>mg/kg · demo</span></div><div class="nutrient-row"><span>N</span><i><b style="width:68%"></b></i><strong>68</strong></div><div class="nutrient-row"><span>P</span><i><b style="width:42%"></b></i><strong>42</strong></div><div class="nutrient-row"><span>K</span><i><b style="width:76%"></b></i><strong>76</strong></div><div class="nutrient-row"><span>Fe</span><i><b style="width:55%"></b></i><strong>55</strong></div><div class="nutrient-row"><span>Zn</span><i><b style="width:36%"></b></i><strong>36</strong></div></div>
+            <button class="full-btn" id="zoneDetails">Ver recomendaciones de esta zona <span>→</span></button>
+          </aside>
+        </div>
+
+        <section class="panel crop-preview">
+          <div class="panel-header"><div><div class="eyebrow">DECISIONES CON INFORMACIÓN</div><h2>Cultivos con potencial para esta zona</h2><p>Ejemplo orientativo; requiere validación agronómica local.</p></div><button class="text-btn" data-goto="cultivos">Ver todos →</button></div>
+          <div class="crop-cards">
+            <article class="crop-card"><div class="crop-visual corn">🌽</div><div><span class="compat high">ALTA COMPATIBILIDAD · DEMO</span><h3>Maíz</h3><p>Revisar humedad disponible y fecha de establecimiento.</p><div class="crop-meta">Ciclo aproximado: 90–120 días</div></div></article>
+            <article class="crop-card"><div class="crop-visual beans">🫘</div><div><span class="compat medium">COMPATIBILIDAD MEDIA · DEMO</span><h3>Frijol</h3><p>Considerar drenaje, variedad y ventana de lluvias.</p><div class="crop-meta">Ciclo aproximado: 75–100 días</div></div></article>
+            <article class="crop-card"><div class="crop-visual squash">🎃</div><div><span class="compat high">ALTA COMPATIBILIDAD · DEMO</span><h3>Calabaza</h3><p>Monitorear humedad y presión de enfermedades.</p><div class="crop-meta">Ciclo aproximado: 90–120 días</div></div></article>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="view-calendario">
+        <div class="page-heading"><div><div class="eyebrow">PLANIFICACIÓN DEL CICLO AGRÍCOLA</div><h1>Calendario <em>agroclimático.</em></h1><p>Consulta patrones estacionales y organiza las labores de tu parcela.</p></div><span class="demo-tag">● CLIMATOLOGÍA DEMOSTRATIVA</span></div>
+        <section class="panel calendar-panel"><div class="panel-header"><div><div class="eyebrow">CONSULTA MENSUAL</div><h2 id="monthTitle">Noviembre 2026</h2><p>Patrones de referencia ilustrativos, no pronóstico operativo.</p></div><div class="month-controls"><button id="prevMonth">←</button><button id="nextMonth">→</button></div></div><div class="month-grid" id="monthGrid"></div><div class="calendar-legend"><span><i class="legend-dot zone-dot"></i> Ventana de siembra sugerida</span><span><i class="legend-dot risk-dot"></i> Atención a estrés hídrico</span><span><i class="legend-dot active-dot"></i> Periodo de cosecha orientativo</span></div></section>
+        <div class="chart-grid"><section class="panel chart-panel"><div class="eyebrow">PRECIPITACIÓN</div><h2>Lluvia mensual</h2><div class="bar-chart" id="rainChart"></div><small class="chart-foot">Milímetros · valores de ejemplo</small></section><section class="panel chart-panel"><div class="eyebrow">TEMPERATURA</div><h2>Temperatura promedio</h2><div class="temp-chart"><svg viewBox="0 0 500 180" preserveAspectRatio="none"><path class="chart-area" d="M0 120 L45 110 L90 95 L135 72 L180 50 L225 38 L270 45 L315 63 L360 80 L405 95 L450 110 L500 125 L500 180 L0 180Z"/><path class="chart-line" d="M0 120 L45 110 L90 95 L135 72 L180 50 L225 38 L270 45 L315 63 L360 80 L405 95 L450 110 L500 125"/></svg><div class="chart-months"><span>E</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div></div><small class="chart-foot">°C · curva ilustrativa anual</small></section></div>
+        <section class="panel advice-panel"><div class="eyebrow">RECOMENDACIÓN DEL MES</div><h2 id="monthAdviceTitle">Prepara el siguiente ciclo</h2><p id="monthAdvice">Evalúa la humedad residual, revisa drenajes y planifica el riego suplementario según el cultivo y el tipo de suelo.</p><span class="advice-tag">Criterio orientativo · verificar condiciones locales</span></section>
+      </section>
+
+      <section class="view" id="view-cultivos">
+        <div class="page-heading"><div><div class="eyebrow">ASISTENTE DE DECISIÓN AGRÍCOLA</div><h1>Recomendaciones de <em>cultivos.</em></h1><p>Explora alternativas y compara sus requerimientos con las condiciones de tu zona.</p></div><span class="demo-tag">● EJEMPLOS ORIENTATIVOS</span></div>
+        <div class="filter-row"><label>Municipio<select id="cropMunicipio"><option>Mérida</option><option>Tizimín</option><option>Valladolid</option><option>Tekax</option></select></label><label>Temporada<select><option>Temporada actual</option><option>Lluvias</option><option>Secas</option></select></label><label>Buscar cultivo<input id="cropSearch" placeholder="Ej. maíz, frijol..."></label></div>
+        <div class="recommendation-grid" id="recommendationGrid">
+          <article class="recommend-card"><div class="recommend-emoji">🌽</div><div class="recommend-content"><span class="compat high">COMPATIBILIDAD ALTA · DEMO</span><h2>Maíz</h2><p>Gramínea de importancia alimentaria. La elección de variedad y fecha de siembra debe ajustarse a la disponibilidad de humedad.</p><div class="spec-grid"><span>Temperatura ideal<strong>18–30 °C</strong></span><span>Humedad<strong>Según etapa</strong></span><span>Suelo<strong>Bien drenado</strong></span><span>Cosecha<strong>90–120 días</strong></span></div><p class="caution">Riesgos: sequía durante floración, encharcamiento y plagas. Validar con análisis de suelo.</p></div></article>
+          <article class="recommend-card"><div class="recommend-emoji">🫘</div><div class="recommend-content"><span class="compat medium">COMPATIBILIDAD MEDIA · DEMO</span><h2>Frijol</h2><p>Leguminosa que puede integrarse en rotaciones. Sensible al exceso de humedad en etapas críticas.</p><div class="spec-grid"><span>Temperatura ideal<strong>18–28 °C</strong></span><span>Humedad<strong>Moderada</strong></span><span>Suelo<strong>Drenaje adecuado</strong></span><span>Cosecha<strong>75–100 días</strong></span></div><p class="caution">Riesgos: enfermedades foliares, lluvias persistentes y estrés hídrico.</p></div></article>
+          <article class="recommend-card"><div class="recommend-emoji">🎃</div><div class="recommend-content"><span class="compat high">COMPATIBILIDAD ALTA · DEMO</span><h2>Calabaza</h2><p>Cultivo adaptable en sistemas diversificados. Requiere monitoreo sanitario y manejo de malezas.</p><div class="spec-grid"><span>Temperatura ideal<strong>20–30 °C</strong></span><span>Humedad<strong>Regular</strong></span><span>Suelo<strong>Franco / drenado</strong></span><span>Cosecha<strong>90–120 días</strong></span></div><p class="caution">Riesgos: oídio, mildiu, insectos vectores y déficit de agua.</p></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-sostenible">
+        <div class="page-heading"><div><div class="eyebrow">SALUD DEL SUELO Y BIODIVERSIDAD</div><h1>Agricultura <em>sostenible.</em></h1><p>Alternativas biológicas y prácticas para cuidar la vida del suelo.</p></div><span class="demo-tag">BIBLIOTECA INFORMATIVA</span></div>
+        <div class="tab-row"><button class="tab active" data-tab="fertilizantes">Fertilizantes ecológicos</button><button class="tab" data-tab="biologicos">Control biológico</button></div>
+        <div class="eco-grid" id="ecoGrid">
+          <article class="eco-card"><div class="eco-illustration">♻️</div><div class="eco-body"><span class="eco-type">ENMIENDA ORGÁNICA</span><h2>Composta orgánica</h2><p>Material orgánico estabilizado que contribuye a mejorar la estructura y actividad biológica del suelo.</p><div class="eco-detail"><b>Beneficios</b><span>Aporta materia orgánica y puede mejorar retención de agua.</span><b>Aplicación</b><span>Incorporar composta madura según análisis y requerimiento del cultivo.</span><b>Precaución</b><span>Evitar material inmaduro o contaminado.</span></div><button class="outline-btn compare-btn">Comparar con fertilizante convencional</button></div></article>
+          <article class="eco-card"><div class="eco-illustration">🪱</div><div class="eco-body"><span class="eco-type">ABONO ORGÁNICO</span><h2>Lombricomposta</h2><p>Producto de la transformación de residuos orgánicos por lombrices y microorganismos.</p><div class="eco-detail"><b>Beneficios</b><span>Materia orgánica y nutrientes en formas variables.</span><b>Aplicación</b><span>Usar como enmienda; ajustar dosis a cultivo y suelo.</span><b>Precaución</b><span>La composición depende de la materia prima.</span></div><button class="outline-btn compare-btn">Comparar con fertilizante convencional</button></div></article>
+          <article class="eco-card"><div class="eco-illustration">🌾</div><div class="eco-body"><span class="eco-type">BIOFERTILIZANTE</span><h2>Bocashi</h2><p>Abono fermentado elaborado con materiales orgánicos y minerales.</p><div class="eco-detail"><b>Beneficios</b><span>Reciclaje de nutrientes y aporte de materia orgánica.</span><b>Aplicación</b><span>Aplicar producto estabilizado siguiendo recomendaciones técnicas.</span><b>Precaución</b><span>Controlar temperatura y fermentación durante su elaboración.</span></div><button class="outline-btn compare-btn">Comparar con fertilizante convencional</button></div></article>
+          <article class="eco-card"><div class="eco-illustration">🧫</div><div class="eco-body"><span class="eco-type">AGENTE MICROBIANO</span><h2>Trichoderma spp.</h2><p>Hongos benéficos usados en estrategias de manejo de ciertos patógenos del suelo.</p><div class="eco-detail"><b>Acción</b><span>Competencia, micoparasitismo e inducción de respuestas de defensa en ciertos sistemas.</span><b>Uso</b><span>Aplicación al suelo o semilla según formulación registrada.</span><b>Precaución</b><span>La eficacia depende de cepa, patógeno, cultivo y ambiente.</span></div><button class="outline-btn compare-btn">Comparar con fungicida convencional</button></div></article>
+          <article class="eco-card"><div class="eco-illustration">🦠</div><div class="eco-body"><span class="eco-type">BACTERIA BENÉFICA</span><h2>Bacillus subtilis</h2><p>Bacteria utilizada en algunos productos biológicos para manejo de enfermedades vegetales.</p><div class="eco-detail"><b>Acción</b><span>Puede competir con patógenos y producir metabolitos antimicrobianos.</span><b>Uso</b><span>Seguir etiqueta y registro del producto para cultivo objetivo.</span><b>Precaución</b><span>No es una solución universal ni sustituye el manejo integrado.</span></div><button class="outline-btn compare-btn">Comparar con fungicida convencional</button></div></article>
+          <article class="eco-card"><div class="eco-illustration">🐞</div><div class="eco-body"><span class="eco-type">CONTROL DE INSECTOS</span><h2>Beauveria bassiana</h2><p>Hongo entomopatógeno usado para el control de determinados insectos; no es fungicida para enfermedades de plantas.</p><div class="eco-detail"><b>Acción</b><span>Infecta insectos susceptibles bajo condiciones apropiadas.</span><b>Uso</b><span>Aplicar conforme a etiqueta, plaga objetivo y condiciones ambientales.</span><b>Precaución</b><span>Evitar clasificarlo como tratamiento universal de hongos fitopatógenos.</span></div><button class="outline-btn compare-btn">Comparar alternativas de manejo</button></div></article>
+        </div>
+        <div class="modal" id="compareModal"><div class="modal-card"><button class="modal-close" id="closeModal">×</button><div class="eyebrow">COMPARACIÓN INFORMATIVA</div><h2>Enfoques de manejo</h2><div class="compare-columns"><div><h3>Insumos sintéticos</h3><p>Pueden aportar nutrientes o controlar organismos objetivo de forma rápida y específica cuando se usan correctamente.</p><ul><li>Requieren dosis y momento adecuados.</li><li>Riesgo de resistencia o impactos fuera del objetivo si se manejan mal.</li><li>Seguir etiqueta y regulación aplicable.</li></ul></div><div><h3>Alternativas ecológicas</h3><p>Pueden contribuir a la salud del suelo y a estrategias de manejo integrado.</p><ul><li>Apoyan el reciclaje de nutrientes y procesos biológicos.</li><li>Su eficacia depende del producto, cultivo y ambiente.</li><li>No reemplazan automáticamente todos los insumos.</li></ul></div></div><p class="modal-note">La elección debe basarse en diagnóstico, análisis de suelo, monitoreo y asesoría técnica. Verifica que el producto esté autorizado para el uso previsto.</p></div></div>
+      </section>
+
+      <section class="view" id="view-general">
+        <div class="page-heading"><div><div class="eyebrow">RESUMEN DE LA RED AGRÍCOLA</div><h1>Panel <em>general.</em></h1><p>Una vista consolidada de las condiciones registradas en el sistema.</p></div><span class="demo-tag">● DATOS DE PRUEBA</span></div>
+        <div class="stats-grid general-stats"><article class="stat-card"><div class="stat-top"><span>Municipios monitoreados</span><span class="stat-icon moss">⌖</span></div><strong>06</strong><small>Municipios de demostración</small></article><article class="stat-card"><div class="stat-top"><span>Sensores instalados</span><span class="stat-icon salmon">⌁</span></div><strong>18</strong><small>Todos simulados</small></article><article class="stat-card"><div class="stat-top"><span>Precipitación acumulada</span><span class="stat-icon citron">☂</span></div><strong>86<small> mm</small></strong><small>Periodo de ejemplo</small></article><article class="stat-card"><div class="stat-top"><span>Zonas favorables</span><span class="stat-icon moss">✓</span></div><strong>04</strong><small>Clasificación ilustrativa</small></article></div>
+        <div class="chart-grid"><section class="panel chart-panel"><div class="eyebrow">ESTADO DE SENSORES</div><h2>Disponibilidad de la red</h2><div class="status-bars"><div><span>Activos</span><i><b style="width:78%"></b></i><strong>14</strong></div><div><span>En revisión</span><i><b class="salmon-bar" style="width:22%"></b></i><strong>04</strong></div><div><span>Sin conexión</span><i><b class="dark-bar" style="width:0%"></b></i><strong>00</strong></div></div></section><section class="panel chart-panel"><div class="eyebrow">CONDICIÓN DE ZONAS</div><h2>Semáforo agroclimático</h2><div class="condition-list"><div><i class="condition favorable"></i><span>Favorable</span><b>4 municipios</b></div><div><i class="condition moderate"></i><span>Moderada</span><b>1 municipio</b></div><div><i class="condition risk"></i><span>Requiere atención</span><b>1 municipio</b></div></div></section></div>
+        <div class="disclaimer"><b>Nota sobre los datos</b><p>Esta versión contiene información simulada con fines de demostración. No se conecta a sensores físicos ni sustituye mediciones, pronósticos oficiales o diagnóstico agronómico.</p></div>
+      </section>
+      <footer>© 2026 GreenFarmify Inteligente <span>Hecho para una agricultura más consciente en Yucatán.</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
